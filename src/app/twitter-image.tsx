@@ -11,7 +11,7 @@ export const size = {
 
 export const contentType = "image/png"
 
-export default function OpenGraphImage() {
+export default function TwitterImage() {
   return new ImageResponse(
     <OgImageTemplate
       title="Minimal docs workspace"

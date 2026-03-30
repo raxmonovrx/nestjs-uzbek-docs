@@ -1,42 +1,33 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { DocsPageShell } from "@/components/docs-page-shell"
-import { getAllDocs, getDocBySlug, getDocGroups, getFirstDoc } from "@/lib/docs"
-import { buildOgImageUrl, siteConfig } from "@/lib/site"
+import { getAllDocs, getDocBySlug, getDocGroups } from "@/lib/docs"
+import { siteConfig } from "@/lib/site"
 
 type DocsPageProps = {
   params: Promise<{
-    slug?: string[]
+    group: string
+    slug: string
   }>
 }
 
 export function generateStaticParams() {
   return getAllDocs().map((doc) => ({
-    slug: doc.slug,
+    group: doc.slug[0],
+    slug: doc.slug[1],
   }))
 }
 
 export async function generateMetadata({ params }: DocsPageProps): Promise<Metadata> {
-  const { slug } = await params
-  const targetSlug = slug ?? getFirstDoc()?.slug
+  const { group, slug } = await params
+  const page = getDocBySlug([group, slug])
 
-  if (!targetSlug) {
-    return {}
-  }
-
-  const page = getDocBySlug(targetSlug)
   if (!page) {
     return {}
   }
 
   const title = page.title
   const description = page.description || siteConfig.description
-  const ogImageUrl = buildOgImageUrl({
-    title,
-    description,
-    eyebrow: page.groupTitle,
-    tags: page.tags,
-  })
 
   return {
     title,
@@ -51,33 +42,19 @@ export async function generateMetadata({ params }: DocsPageProps): Promise<Metad
       type: "article",
       url: page.href,
       siteName: siteConfig.name,
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [ogImageUrl],
     },
   }
 }
 
 export default async function DocsPage({ params }: DocsPageProps) {
-  const { slug } = await params
-  const targetSlug = slug ?? getFirstDoc()?.slug
+  const { group, slug } = await params
+  const page = getDocBySlug([group, slug])
 
-  if (!targetSlug) {
-    notFound()
-  }
-
-  const page = getDocBySlug(targetSlug)
   if (!page) {
     notFound()
   }
