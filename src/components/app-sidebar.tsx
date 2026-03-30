@@ -172,18 +172,6 @@ export function AppSidebar({
             </a>
             .
           </p>
-          {/* <p className="leading-5">
-            Made with ❤️ by{' '}
-            <a
-              href="https://raxmonovrx.uz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-primary underline-offset-4 transition-colors hover:underline"
-            >
-              Farruxbek Raxmonov
-            </a>
-            .
-          </p> */}
         </div>
       </SidebarFooter>
       <SidebarRail />

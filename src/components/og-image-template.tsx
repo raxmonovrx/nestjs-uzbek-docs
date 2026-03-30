@@ -146,11 +146,11 @@ export function OgImageTemplate({
               fontSize: 24,
             }}
           >
+            <div>NestJS</div>
+            <div style={{ color: '#525252' }}>•</div>
             <div>Next.js</div>
             <div style={{ color: '#525252' }}>•</div>
-            <div>Markdown</div>
-            <div style={{ color: '#525252' }}>•</div>
-            <div>Dark UI</div>
+            <div>FarruXbek Raxmonov</div>
           </div>
 
           {visibleTags.length > 0 ? (
