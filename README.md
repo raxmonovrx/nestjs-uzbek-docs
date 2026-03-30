@@ -1,6 +1,20 @@
-# Atlas Docs
+# NestJS Uzbek Docs
 
-Minimal Next.js documentation workspace built on top of shadcn sidebar components.
+Next.js va shadcn asosida qurilgan markdown-driven NestJS hujjatlari sayti.
+
+Bu loyiha rasmiy NestJS sayti emas. U `docs.nestjs.com` kontentining mustaqil o'zbekcha tarjimasi va adaptatsiyasi hisoblanadi.
+
+## Attribution
+
+- Original documentation source: `https://docs.nestjs.com`
+- Upstream source repository: `https://github.com/nestjs/docs.nestjs.com`
+- NestJS main project: `https://github.com/nestjs/nest`
+- This adaptation and Uzbek translation: Farruxbek Raxmonov
+
+## License and notice
+
+- See [LICENSE](./LICENSE) for the MIT license used by this project.
+- See [NOTICE](./NOTICE) for attribution and trademark/disclaimer notes.
 
 ## Run locally
 

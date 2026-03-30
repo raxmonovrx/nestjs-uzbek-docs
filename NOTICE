@@ -1,0 +1,18 @@
+NestJS Uzbek Docs
+
+This project is an independent Uzbek translation and adaptation of the NestJS
+documentation and related documentation website structure.
+
+Source attribution:
+- Original documentation website: https://docs.nestjs.com
+- Upstream documentation repository: https://github.com/nestjs/docs.nestjs.com
+- NestJS project repository: https://github.com/nestjs/nest
+
+Important notice:
+- This project is not the official NestJS website.
+- This project is not affiliated with, endorsed by, or sponsored by NestJS.
+- "NestJS" and related names, logos, and marks belong to their respective
+  owners.
+
+This repository contains additional translation, adaptation, UI, and integration
+work by Farruxbek Raxmonov.

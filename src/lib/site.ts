@@ -1,7 +1,7 @@
 function normalizeUrl(value: string) {
-  const trimmed = value.trim().replace(/\/+$/, "")
+  const trimmed = value.trim().replace(/\/+$/, '')
 
-  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) {
+  if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
     return trimmed
   }
 
@@ -23,11 +23,12 @@ function resolveSiteUrl() {
     return normalizeUrl(vercelProductionUrl)
   }
 
-  return "http://localhost:3000"
+  return 'http://localhost:3000'
 }
 
 export const siteConfig = {
-  name: "Atlas Docs",
-  description: "Minimal markdown-driven documentation workspace built with Next.js and shadcn.",
+  name: 'NestJS Uzbek Docs',
+  description:
+    "NestJS hujjatlarining mustaqil o'zbekcha tarjimasi va adaptatsiyasi. Bu rasmiy NestJS sayti emas.",
   url: resolveSiteUrl(),
 }

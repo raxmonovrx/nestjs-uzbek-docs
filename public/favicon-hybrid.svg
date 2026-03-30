@@ -1,7 +1,8 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="64" height="64" rx="16" fill="#212121"/>
   <rect x="6.5" y="6.5" width="51" height="51" rx="13.5" stroke="rgba(255,255,255,0.12)"/>
-  <path d="M20 18C20 16.8954 20.8954 16 22 16H36L44 24V46C44 47.1046 43.1046 48 42 48H22C20.8954 48 20 47.1046 20 46V18Z" fill="#181818" stroke="rgba(255,255,255,0.14)"/>
-  <path d="M36 16V23C36 24.1046 36.8954 25 38 25H44" stroke="#FB7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M31.95 22L37.9 38H35.05L33.85 34.6H30L28.8 38H26L31.95 22ZM31.95 27.1L30.8 31.6H33.1L31.95 27.1Z" fill="#F5F5F5"/>
+  <path d="M20 18C20 16.8954 20.8954 16 22 16H37L44 23V46C44 47.1046 43.1046 48 42 48H22C20.8954 48 20 47.1046 20 46V18Z" fill="#181818" stroke="rgba(255,255,255,0.14)"/>
+  <path d="M37 16V22C37 23.1046 37.8954 24 39 24H44" stroke="#22C1FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25 28V40H28V33L33.6 40H36V28H33V35L27.4 28H25Z" fill="#F5F5F5"/>
+  <path d="M25 43H38" stroke="rgba(34,193,255,0.55)" stroke-width="2.2" stroke-linecap="round"/>
 </svg>

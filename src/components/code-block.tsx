@@ -10,6 +10,13 @@ type CodeBlockProps = {
   language?: string
 }
 
+type CodeVariant = {
+  code: string
+  filename?: string
+  language: string
+  label: string
+}
+
 const languageAliases: Record<string, string> = {
   ts: 'typescript',
   tsx: 'tsx',
@@ -181,14 +188,75 @@ function getLanguageIcon(language: string) {
   return Braces
 }
 
+function getAlternateLanguage(language: string) {
+  if (language === 'typescript' || language === 'tsx') {
+    return 'javascript'
+  }
+
+  return language
+}
+
+function parseCodeVariants(code: string, language: string): CodeVariant[] {
+  const lines = code.replace(/\r\n/g, '\n').split('\n')
+  const variants: Array<{ lines: string[]; filename?: string }> = [{ lines: [] }]
+
+  for (const line of lines) {
+    const filenameMatch = line.match(/^@@filename(?:\((.*)\))?$/)
+    if (filenameMatch) {
+      const filename = filenameMatch[1]?.trim()
+      variants[variants.length - 1].filename = filename || undefined
+      continue
+    }
+
+    if (line.trim() === '@@switch') {
+      variants.push({ lines: [] })
+      continue
+    }
+
+    variants[variants.length - 1].lines.push(line)
+  }
+
+  const cleaned = variants
+    .map((variant, index) => {
+      const variantLanguage = index === 0 ? language : getAlternateLanguage(language)
+      return {
+        code: variant.lines.join('\n').replace(/^\n+|\n+$/g, ''),
+        filename: variant.filename,
+        language: variantLanguage,
+        label: getLanguageLabel(variantLanguage),
+      }
+    })
+    .filter((variant) => variant.code.length > 0)
+
+  return cleaned.length > 0
+    ? cleaned
+    : [
+        {
+          code,
+          language,
+          label: getLanguageLabel(language),
+        },
+      ]
+}
+
 export function CodeBlock({ code, language }: CodeBlockProps) {
   const [copied, setCopied] = React.useState(false)
   const normalizedLanguage = normalizeLanguage(language)
-  const languageLabel = getLanguageLabel(normalizedLanguage)
-  const LanguageIcon = getLanguageIcon(normalizedLanguage)
+  const variants = React.useMemo(
+    () => parseCodeVariants(code, normalizedLanguage),
+    [code, normalizedLanguage]
+  )
+  const [activeIndex, setActiveIndex] = React.useState(0)
+  const activeVariant = variants[Math.min(activeIndex, variants.length - 1)] ?? variants[0]
+  const languageLabel = activeVariant.label
+  const LanguageIcon = getLanguageIcon(activeVariant.language)
+
+  React.useEffect(() => {
+    setActiveIndex(0)
+  }, [code, normalizedLanguage])
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(code)
+    await navigator.clipboard.writeText(activeVariant.code)
     setCopied(true)
     window.setTimeout(() => setCopied(false), 1600)
   }
@@ -196,26 +264,54 @@ export function CodeBlock({ code, language }: CodeBlockProps) {
   return (
     <div className="my-6 overflow-hidden rounded-3xl border border-white/10 bg-[#181818] ">
       <div className="sticky top-0 z-10 bg-[#181818]/96 backdrop-blur-sm">
-        <div className="flex items-center justify-between px-4 py-2.5 md:px-5">
-          <div className="flex min-w-0 items-center text-sm font-medium text-slate-100">
-            <LanguageIcon className="mr-2.5 size-4 shrink-0 text-slate-500" />
-            <span className="truncate text-sm text-slate-300">{languageLabel}</span>
+        <div className="flex items-center justify-between gap-3 px-4 py-2.5 md:px-5">
+          <div className="min-w-0">
+            <div className="flex min-w-0 items-center text-sm font-medium text-slate-100">
+              <LanguageIcon className="mr-2.5 size-4 shrink-0 text-slate-500" />
+              <span className="truncate text-sm text-slate-300">{languageLabel}</span>
+            </div>
+            {activeVariant.filename ? (
+              <div className="mt-0.5 truncate pl-[1.625rem] text-xs text-slate-500">
+                {activeVariant.filename}
+              </div>
+            ) : null}
           </div>
 
-          <button
-            type="button"
-            onClick={handleCopy}
-            aria-label="Copy code"
-            className="inline-flex size-8 items-center justify-center rounded-full text-slate-500 transition hover:bg-white/8 hover:text-slate-100"
-          >
-            {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
-          </button>
+          <div className="flex items-center gap-2">
+            {variants.length > 1 ? (
+              <div className="hidden rounded-full border border-white/8 bg-white/[0.03] p-0.5 sm:flex">
+                {variants.map((variant, index) => (
+                  <button
+                    key={`${variant.label}-${index}`}
+                    type="button"
+                    onClick={() => setActiveIndex(index)}
+                    className={
+                      index === activeIndex
+                        ? 'rounded-full bg-white/10 px-2.5 py-1 text-xs font-medium text-slate-100'
+                        : 'rounded-full px-2.5 py-1 text-xs font-medium text-slate-500 transition hover:text-slate-300'
+                    }
+                  >
+                    {variant.label}
+                  </button>
+                ))}
+              </div>
+            ) : null}
+
+            <button
+              type="button"
+              onClick={handleCopy}
+              aria-label="Copy code"
+              className="inline-flex size-8 items-center justify-center rounded-full text-slate-500 transition hover:bg-white/8 hover:text-slate-100"
+            >
+              {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
+            </button>
+          </div>
         </div>
         <div className="mx-4 h-px bg-white/6 md:mx-5" />
       </div>
 
       <SyntaxHighlighter
-        language={normalizedLanguage}
+        language={activeVariant.language}
         style={atlasCodeTheme}
         showLineNumbers
         wrapLongLines={false}
@@ -242,7 +338,7 @@ export function CodeBlock({ code, language }: CodeBlockProps) {
           userSelect: 'none',
         }}
       >
-        {code}
+        {activeVariant.code}
       </SyntaxHighlighter>
     </div>
   )

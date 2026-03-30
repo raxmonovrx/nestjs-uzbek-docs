@@ -10,7 +10,7 @@ type DocsImageProps = {
   }>
 }
 
-export const alt = "Atlas Docs article preview"
+export const alt = "NestJS Uzbek Docs article preview"
 
 export const size = {
   width: 1200,

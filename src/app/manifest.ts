@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site"
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: siteConfig.name,
-    short_name: "Atlas",
+    short_name: "Nest UZ Docs",
     description: siteConfig.description,
     start_url: "/",
     scope: "/",
