@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import { DocsPageShell } from "@/components/docs-page-shell"
 import { getAllDocs, getDocBySlug, getDocGroups, getFirstDoc } from "@/lib/docs"
-import { siteConfig } from "@/lib/site"
+import { buildOgImageUrl, siteConfig } from "@/lib/site"
 
 type DocsPageProps = {
   params: Promise<{
@@ -31,11 +31,20 @@ export async function generateMetadata({ params }: DocsPageProps): Promise<Metad
 
   const title = page.title
   const description = page.description || siteConfig.description
+  const ogImageUrl = buildOgImageUrl({
+    title,
+    description,
+    eyebrow: page.groupTitle,
+    tags: page.tags,
+  })
 
   return {
     title,
     description,
     keywords: page.tags,
+    alternates: {
+      canonical: page.href,
+    },
     openGraph: {
       title,
       description,
@@ -44,12 +53,18 @@ export async function generateMetadata({ params }: DocsPageProps): Promise<Metad
       siteName: siteConfig.name,
       images: [
         {
-          url: "/opengraph-image",
+          url: ogImageUrl,
           width: 1200,
           height: 630,
-          alt: siteConfig.name,
+          alt: title,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImageUrl],
     },
   }
 }

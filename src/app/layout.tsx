@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Geist_Mono, Poppins } from "next/font/google"
 import { TooltipProvider } from "@/components/ui/tooltip"
-import { siteConfig } from "@/lib/site"
+import { buildOgImageUrl, siteConfig } from "@/lib/site"
 import "./globals.css"
 
 const poppins = Poppins({
@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   },
   applicationName: siteConfig.name,
   description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/favicon-a-monogram.svg",
     shortcut: "/favicon-a-monogram.svg",
@@ -38,11 +41,29 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
+        url: buildOgImageUrl({
+          title: "Minimal docs workspace",
+          description: "Markdown-driven navigation, clean reading layout, and polished code blocks for technical documentation.",
+          eyebrow: siteConfig.name,
+          tags: ["Next.js", "Markdown", "Dark UI"],
+        }),
         width: 1200,
         height: 630,
         alt: siteConfig.name,
       },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [
+      buildOgImageUrl({
+        title: "Minimal docs workspace",
+        description: "Markdown-driven navigation, clean reading layout, and polished code blocks for technical documentation.",
+        eyebrow: siteConfig.name,
+        tags: ["Next.js", "Markdown", "Dark UI"],
+      }),
     ],
   },
 }
