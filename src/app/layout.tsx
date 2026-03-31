@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Analytics } from "@vercel/analytics/next"
 import { Geist_Mono, Poppins } from "next/font/google"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { siteConfig } from "@/lib/site"
@@ -59,6 +60,7 @@ export default function RootLayout({
     >
       <body className="min-h-full bg-background font-sans text-foreground">
         <TooltipProvider>{children}</TooltipProvider>
+        <Analytics />
       </body>
     </html>
   )
