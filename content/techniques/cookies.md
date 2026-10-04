@@ -55,7 +55,7 @@ findAll(@Res({ passthrough: true }) response: Response) {
 }
 ```
 
-> warning **Warning** Agar javobni qayta ishlash mantiqini freymvorkka qoldirmoqchi bo'lsangiz, yuqorida ko'rsatilgandek `passthrough` opsiyasini `true` qilib qo'yishni unutmang. Batafsil [bu yerda](/docs/core/controllers#library-specific-approach).
+> warning **Warning** Agar javobni qayta ishlash mantiqini freymvorkka qoldirmoqchi bo'lsangiz, yuqorida ko'rsatilgandek `passthrough` opsiyasini `true` qilib qo'yishni unutmang. Batafsil [bu yerda](/docs/core/controllers#library-specific-yondashuv).
 
 > info **Hint** `@Res()` dekoratori `@nestjs/common` paketidan, `Response` esa `express` paketidan import qilinadi.
 
@@ -101,7 +101,7 @@ findAll(@Res({ passthrough: true }) response: FastifyReply) {
 
 `FastifyReply#setCookie()` metodi haqida ko'proq ma'lumot uchun ushbu sahifaga qarang.
 
-> warning **Warning** Agar javobni qayta ishlash mantiqini freymvorkka qoldirmoqchi bo'lsangiz, yuqorida ko'rsatilgandek `passthrough` opsiyasini `true` qilib qo'yishni unutmang. Batafsil [bu yerda](/docs/core/controllers#library-specific-approach).
+> warning **Warning** Agar javobni qayta ishlash mantiqini freymvorkka qoldirmoqchi bo'lsangiz, yuqorida ko'rsatilgandek `passthrough` opsiyasini `true` qilib qo'yishni unutmang. Batafsil [bu yerda](/docs/core/controllers#library-specific-yondashuv).
 
 > info **Hint** `@Res()` dekoratori `@nestjs/common` paketidan, `FastifyReply` esa `fastify` paketidan import qilinadi.
 

@@ -139,7 +139,7 @@ CacheModule.register({
 
 #### Modulni global ishlatish
 
-`CacheModule` ni boshqa modullarda ishlatmoqchi bo'lsangiz, uni import qilishingiz kerak (istalgan Nest modulida bo'lgani kabi). Muqobil ravishda, opsiyalar obyektidagi `isGlobal` xossasini `true` qilib, uni [global modul](/docs/core/modules#global-modules) sifatida e'lon qilishingiz mumkin, quyida ko'rsatilgandek. Bunda `CacheModule` bir marta root modulda (masalan, `AppModule`) yuklangach, boshqa modullarda uni import qilishingiz shart bo'lmaydi.
+`CacheModule` ni boshqa modullarda ishlatmoqchi bo'lsangiz, uni import qilishingiz kerak (istalgan Nest modulida bo'lgani kabi). Muqobil ravishda, opsiyalar obyektidagi `isGlobal` xossasini `true` qilib, uni [global modul](/docs/core/modules#global-modullar) sifatida e'lon qilishingiz mumkin, quyida ko'rsatilgandek. Bunda `CacheModule` bir marta root modulda (masalan, `AppModule`) yuklangach, boshqa modullarda uni import qilishingiz shart bo'lmaydi.
 
 ```typescript
 CacheModule.register({
@@ -149,7 +149,7 @@ CacheModule.register({
 
 #### Global kesh override'lari
 
-Global kesh yoqilganda, kesh yozuvlari route path asosida avtomatik generatsiya qilingan `CacheKey` ostida saqlanadi. Siz `@CacheKey()` va `@CacheTTL()` yordamida kesh sozlamalarini har bir metod bo'yicha override qilishingiz mumkin, bu har bir controller metodi uchun alohida keshlash strategiyalarini taqdim etadi. Bu ko'proq [turli kesh store'larini](/docs/techniques/caching#different-stores) ishlatayotganda dolzarb bo'ladi.
+Global kesh yoqilganda, kesh yozuvlari route path asosida avtomatik generatsiya qilingan `CacheKey` ostida saqlanadi. Siz `@CacheKey()` va `@CacheTTL()` yordamida kesh sozlamalarini har bir metod bo'yicha override qilishingiz mumkin, bu har bir controller metodi uchun alohida keshlash strategiyalarini taqdim etadi. Bu ko'proq [turli kesh store'larini](/docs/techniques/caching#muqobil-cache-storelardan-foydalanish) ishlatayotganda dolzarb bo'ladi.
 
 Butun controller uchun TTL belgilash uchun `@CacheTTL()` dekoratorini controller darajasida qo'llashingiz mumkin. Agar controller darajasida ham, metod darajasida ham cache TTL sozlamalari berilgan bo'lsa, metod darajasidagi sozlama ustuvor bo'ladi.
 
@@ -167,7 +167,7 @@ export class AppController {
 
 > info **Hint** `@CacheKey()` va `@CacheTTL()` dekoratorlari `@nestjs/cache-manager` paketidan import qilinadi.
 
-`@CacheKey()` dekoratori mos `@CacheTTL()` dekoratorisiz ham, aksincha ham ishlatilishi mumkin. Kimdir faqat `@CacheKey()` yoki faqat `@CacheTTL()` ni override qilishni tanlashi mumkin. Dekorator bilan override qilinmagan sozlamalar global ro'yxatdan o'tkazilgandagi default qiymatlardan foydalanadi (qarang [Customize caching](/docs/techniques/caching#customize-caching)).
+`@CacheKey()` dekoratori mos `@CacheTTL()` dekoratorisiz ham, aksincha ham ishlatilishi mumkin. Kimdir faqat `@CacheKey()` yoki faqat `@CacheTTL()` ni override qilishni tanlashi mumkin. Dekorator bilan override qilinmagan sozlamalar global ro'yxatdan o'tkazilgandagi default qiymatlardan foydalanadi (qarang [Customize caching](/docs/techniques/caching#modulni-global-ishlatish)).
 
 #### WebSockets va Microservices
 

@@ -12,7 +12,7 @@ Serializatsiya tarmoq javobida obyektlar qaytarilishidan oldin sodir bo'ladigan 
 
 Nest bu operatsiyalarni sodda tarzda bajarishga yordam beradigan ichki imkoniyatni taqdim etadi. `ClassSerializerInterceptor` interceptori kuchli class-transformer paketidan foydalanib, obyektlarni transformatsiya qilishning deklarativ va kengaytiriladigan usulini beradi. U bajaradigan asosiy ish - metod handleridan qaytgan qiymatni olib, class-transformer dan `instanceToPlain()` funksiyasini qo'llash. Shu orqali u quyida ko'rsatilganidek entity/DTO klassida `class-transformer` dekoratorlari bilan ifodalangan qoidalarni qo'llay oladi.
 
-> info **Hint** Serializatsiya [StreamableFile](/docs/techniques/streaming-files#streamable-file-class) javoblariga qo'llanilmaydi.
+> info **Hint** Serializatsiya [StreamableFile](/docs/techniques/streaming-files#streamablefile-klassi) javoblariga qo'llanilmaydi.
 
 #### Xossalarni chiqarib tashlash
 
@@ -64,7 +64,7 @@ Ushbu endpoint so'ralganda, klient quyidagi javobni oladi:
 }
 ```
 
-Interceptor ilova bo'ylab qo'llanishi mumkinligini unutmang (bu [bu yerda](/docs/core/interceptors#binding-interceptors) yoritilgan). Interceptor va entity klass deklaratsiyasining kombinatsiyasi `UserEntity` qaytaradigan **har qanday** metod `password` xossasini olib tashlashini kafolatlaydi. Bu biznes qoidalarini markazlashgan tarzda ijro etishning bir usulini beradi.
+Interceptor ilova bo'ylab qo'llanishi mumkinligini unutmang (bu [bu yerda](/docs/core/interceptors#interceptorlarni-ulash) yoritilgan). Interceptor va entity klass deklaratsiyasining kombinatsiyasi `UserEntity` qaytaradigan **har qanday** metod `password` xossasini olib tashlashini kafolatlaydi. Bu biznes qoidalarini markazlashgan tarzda ijro etishning bir usulini beradi.
 
 #### Xossalarni chiqarish
 

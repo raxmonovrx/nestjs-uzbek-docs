@@ -88,7 +88,7 @@ ConfigModule.forRoot({
 
 #### Modulni global ishlatish
 
-`ConfigModule` ni boshqa modullarda ishlatmoqchi bo'lsangiz, uni import qilishingiz kerak (istalgan Nest modulida bo'lgani kabi). Muqobil ravishda, opsiyalar obyektidagi `isGlobal` xossasini `true` qilib, uni [global modul](/docs/core/modules#global-modules) sifatida e'lon qilishingiz mumkin. Bunda `ConfigModule` root modulda (masalan, `AppModule`) yuklangach, boshqa modullarda uni import qilishingiz shart bo'lmaydi.
+`ConfigModule` ni boshqa modullarda ishlatmoqchi bo'lsangiz, uni import qilishingiz kerak (istalgan Nest modulida bo'lgani kabi). Muqobil ravishda, opsiyalar obyektidagi `isGlobal` xossasini `true` qilib, uni [global modul](/docs/core/modules#global-modullar) sifatida e'lon qilishingiz mumkin. Bunda `ConfigModule` root modulda (masalan, `AppModule`) yuklangach, boshqa modullarda uni import qilishingiz shart bo'lmaydi.
 
 ```typescript
 ConfigModule.forRoot({
