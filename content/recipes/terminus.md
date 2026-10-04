@@ -58,7 +58,7 @@ Healthcheck'larni [controller](/docs/core/controllers) orqali ishga tushirish mu
 $ nest g controller health
 ```
 
-> info **Info** Ilovada shutdown hook'larni yoqish qat'iy tavsiya etiladi. Terminus integratsiyasi ushbu lifecycle event'dan foydalanadi. Shutdown hook'lar haqida ko'proq [bu yerda](/docs/fundamentals/lifecycle-events#application-shutdown) o'qing.
+> info **Info** Ilovada shutdown hook'larni yoqish qat'iy tavsiya etiladi. Terminus integratsiyasi ushbu lifecycle event'dan foydalanadi. Shutdown hook'lar haqida ko'proq [bu yerda](/docs/fundamentals/lifecycle-events#ilovani-ochirish) o'qing.
 
 #### HTTP Healthcheck
 
@@ -536,7 +536,7 @@ Terminus faqat error xabarlarini log qiladi, masalan Healthcheck muvaffaqiyatsiz
 Ushbu bo'limda `TerminusLogger` nomli custom logger qanday yaratilishini ko'rsatamiz. Bu logger built-in logger'dan meros oladi.
 Shuning uchun logger'ning qaysi qismini override qilishni xohlasangiz, o'shani tanlashingiz mumkin.
 
-> info **Info** NestJS'dagi custom logger'lar haqida ko'proq bilmoqchi bo'lsangiz, [bu yerda o'qing](/docs/techniques/logger#injecting-a-custom-logger).
+> info **Info** NestJS'dagi custom logger'lar haqida ko'proq bilmoqchi bo'lsangiz, [bu yerda o'qing](/docs/techniques/logger#custom-loggerni-inject-qilish).
 
 ```typescript
 @@filename(terminus-logger.service)

@@ -360,7 +360,7 @@ export class HeroKilledDragonHandler implements IEventHandler<HeroKilledDragonEv
 > info **Hint** Event handlerlardan foydalanishni boshlaganingizda an'anaviy HTTP web kontekstidan tashqariga chiqishingizni yodda tuting.
 >
 > - `CommandHandlers` dagi xatolarni hamon o'rnatilgan [Exception filterlar](/docs/core/exception-filters) ushlashi mumkin.
-> - `EventHandlers` dagi xatolar Exception filterlar tomonidan ushlanmaydi: ularni qo'lda hal qilishingiz kerak bo'ladi. Oddiy `try/catch`, [Sagas](/docs/recipes/cqrs#sagas) orqali kompensatsion event qo'zg'atish yoki boshqa usullar.
+> - `EventHandlers` dagi xatolar Exception filterlar tomonidan ushlanmaydi: ularni qo'lda hal qilishingiz kerak bo'ladi. Oddiy `try/catch`, [Sagas](/docs/recipes/cqrs#sagalari) orqali kompensatsion event qo'zg'atish yoki boshqa usullar.
 > - `CommandHandlers` dagi HTTP javoblarini mijozga yuborish mumkin.
 > - `EventHandlers` dagi HTTP javoblarini yuborib bo'lmaydi. Mijozga ma'lumot yubormoqchi bo'lsangiz [WebSocket](/docs/websockets/gateways), [SSE](/docs/techniques/server-sent-events) yoki boshqa yechimlardan foydalanishingiz mumkin.
 
