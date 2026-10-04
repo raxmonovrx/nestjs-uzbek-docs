@@ -22,7 +22,7 @@ Bu maqsad `nest` buyrug'i, lokal o'rnatilgan TypeScript kompilyatori va `package
 
 #### Build
 
-`nest build` - bu standart `tsc` kompilyatori yoki `swc` kompilyatori ( [standard projects](/docs/cli/overview#project-structure) uchun) yoki `ts-loader`dan foydalanuvchi webpack bundler ( [monorepos](/docs/cli/overview#project-structure) uchun) ustidagi wrapper. U `tsconfig-paths`ni qutidan ishlatishdan tashqari boshqa kompilyatsiya funksiyalari yoki bosqichlarini qo'shmaydi. Uning mavjud bo'lish sababi shuki, ko'plab developerlar, ayniqsa Nest bilan yangi boshlayotganlar, kompilyator opsiyalarini (masalan, `tsconfig.json` fayli) sozlashga hojat sezmaydi va bu ba'zan murakkab bo'lishi mumkin.
+`nest build` - bu standart `tsc` kompilyatori yoki `swc` kompilyatori ( [standard projects](/docs/cli/overview#loyiha-tuzilmasi) uchun) yoki `ts-loader`dan foydalanuvchi webpack bundler ( [monorepos](/docs/cli/overview#loyiha-tuzilmasi) uchun) ustidagi wrapper. U `tsconfig-paths`ni qutidan ishlatishdan tashqari boshqa kompilyatsiya funksiyalari yoki bosqichlarini qo'shmaydi. Uning mavjud bo'lish sababi shuki, ko'plab developerlar, ayniqsa Nest bilan yangi boshlayotganlar, kompilyator opsiyalarini (masalan, `tsconfig.json` fayli) sozlashga hojat sezmaydi va bu ba'zan murakkab bo'lishi mumkin.
 
 Batafsil ma'lumot uchun [nest build](/docs/cli/usages#nest-build) hujjatiga qarang.
 
