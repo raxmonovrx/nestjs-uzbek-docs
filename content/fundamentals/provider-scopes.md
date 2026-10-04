@@ -56,7 +56,7 @@ Xuddi shuningdek, custom providers uchun provayderni ro'yxatdan o'tkazishda to'l
 
 Singleton qamrov standart holatda qo'llaniladi va e'lon qilish shart emas. Agar provayderni singleton qamrovli qilib aniq ko'rsatmoqchi bo'lsangiz, `scope` xossasi uchun `Scope.DEFAULT` qiymatidan foydalaning.
 
-> warning **Notice** Websocket Gateway'lar request-scoped provayderlardan foydalanmasligi kerak, chunki ular singleton sifatida ishlashi shart. Har bir gateway real socketni kapsullaydi va bir necha marta instansiyalanishi mumkin emas. Bu cheklov boshqa ba'zi provayderlarga ham tegishli, masalan [_Passport strategies_](/docs/security/authentication#request-scoped-strategies) yoki _Cron controllers_.
+> warning **Notice** Websocket Gateway'lar request-scoped provayderlardan foydalanmasligi kerak, chunki ular singleton sifatida ishlashi shart. Har bir gateway real socketni kapsullaydi va bir necha marta instansiyalanishi mumkin emas. Bu cheklov boshqa ba'zi provayderlarga ham tegishli, masalan [_Passport strategies_](/docs/recipes/passport#request-scopeli-strategylar) yoki _Cron controllers_.
 
 #### Controller qamrovi
 
