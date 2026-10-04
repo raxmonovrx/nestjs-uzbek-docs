@@ -10,7 +10,7 @@ NestJS bilan ishlash jarayonida, freymvorkni o'rganayotganingizda turli xatolarg
 
 #### "Cannot resolve dependency" xatosi
 
-> info **Hint** "Cannot resolve dependency" xatosini osonroq hal qilishga yordam beradigan [NestJS Devtools](/docs/devtools/overview#investigating-the-cannot-resolve-dependency-error) ni ham ko'rib chiqing.
+> info **Hint** "Cannot resolve dependency" xatosini osonroq hal qilishga yordam beradigan [NestJS Devtools](/docs/devtools/overview#cannot-resolve-dependency-xatosini-tekshirish) ni ham ko'rib chiqing.
 
 Eng ko'p uchraydigan xatolardan biri - Nest provider dependency'larini resolve qila olmasligi bilan bog'liq. Xatolik xabari odatda quyidagicha ko'rinadi:
 
