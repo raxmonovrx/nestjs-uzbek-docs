@@ -173,7 +173,7 @@ So'rovga Extension qo'shish uchun `@ApiExtension()` dekoratoridan foydalaning. K
 
 #### Kengaytirilgan: Generic `ApiResponse`
 
-[Raw Definitions](/docs/openapi/types-and-parameters#raw-definitions) imkoniyati bilan Swagger UI uchun Generic sxema aniqlashimiz mumkin. Quyidagi DTO mavjud deb faraz qilamiz:
+[Raw Definitions](/docs/openapi/types-and-parameters#xom-tariflar) imkoniyati bilan Swagger UI uchun Generic sxema aniqlashimiz mumkin. Quyidagi DTO mavjud deb faraz qilamiz:
 
 ```ts
 export class PaginatedDto<TData> {
@@ -231,7 +231,7 @@ Bu misolda javobda `PaginatedDto` ning `allOf`i bo'lishi va `results` xususiyati
 - `getSchemaPath()` funksiyasi berilgan model uchun OpenAPI Spec faylidan OpenAPI Schema yo'lini qaytaradi.
 - `allOf` OAS 3 tomonidan turli meros bilan bog'liq use-case larni qamrab olish uchun taqdim etilgan tushuncha.
 
-Oxir-oqibat, `PaginatedDto` hech bir controller tomonidan to'g'ridan-to'g'ri ishlatilmagani uchun `SwaggerModule` hali mos model ta'rifini generatsiya qila olmaydi. Bunday holatda uni [Extra Model](/docs/openapi/types-and-parameters#extra-models) sifatida qo'shishimiz kerak. Masalan, controllerni quyidagicha `@ApiExtraModels()` dekoratori bilan belgilashimiz mumkin:
+Oxir-oqibat, `PaginatedDto` hech bir controller tomonidan to'g'ridan-to'g'ri ishlatilmagani uchun `SwaggerModule` hali mos model ta'rifini generatsiya qila olmaydi. Bunday holatda uni [Extra Model](/docs/openapi/types-and-parameters#qoshimcha-modellari) sifatida qo'shishimiz kerak. Masalan, controllerni quyidagicha `@ApiExtraModels()` dekoratori bilan belgilashimiz mumkin:
 
 ```ts
 @Controller('cats')

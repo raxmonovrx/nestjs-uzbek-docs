@@ -45,14 +45,14 @@ bootstrap();
 
 > info **Hint** Fabrika metodi `SwaggerModule.createDocument()` Swagger hujjatini aynan so'ralganda generatsiya qilish uchun ishlatiladi. Bu yondashuv boshlang'ich vaqtni tejaydi va natijaviy hujjat OpenAPI Document spetsifikatsiyasiga mos keladigan serializatsiya qilinadigan obyekt bo'ladi. Hujjatni HTTP orqali berish o'rniga, uni JSON yoki YAML fayl sifatida saqlab, turli usullarda ishlatishingiz mumkin.
 
-`DocumentBuilder` OpenAPI spetsifikatsiyasiga mos bazaviy hujjatni tuzishga yordam beradi. U sarlavha, tavsif, versiya kabi xususiyatlarni o'rnatish imkonini beruvchi bir nechta metodlarni taqdim etadi. To'liq hujjatni (barcha HTTP marshrutlari bilan) yaratish uchun `SwaggerModule` klassining `createDocument()` metodidan foydalanamiz. Bu metod ikkita argument qabul qiladi: ilova nusxasi va Swagger parametrlar obyekti. Bundan tashqari, uchinchi argument sifatida `SwaggerDocumentOptions` turidagi obyektni berishimiz mumkin. Bu haqda ko'proq [Hujjat parametrlar bo'limida](/docs/openapi/introduction#document-options) yozilgan.
+`DocumentBuilder` OpenAPI spetsifikatsiyasiga mos bazaviy hujjatni tuzishga yordam beradi. U sarlavha, tavsif, versiya kabi xususiyatlarni o'rnatish imkonini beruvchi bir nechta metodlarni taqdim etadi. To'liq hujjatni (barcha HTTP marshrutlari bilan) yaratish uchun `SwaggerModule` klassining `createDocument()` metodidan foydalanamiz. Bu metod ikkita argument qabul qiladi: ilova nusxasi va Swagger parametrlar obyekti. Bundan tashqari, uchinchi argument sifatida `SwaggerDocumentOptions` turidagi obyektni berishimiz mumkin. Bu haqda ko'proq [Hujjat parametrlar bo'limida](/docs/openapi/introduction#hujjat-parametrlar) yozilgan.
 
 Hujjat yaratganimizdan so'ng, `setup()` metodini chaqirishimiz mumkin. U quyidagilarni qabul qiladi:
 
 1. Swagger UI joylashtiriladigan yo'l
 2. Ilova nusxasi
 3. Yuqorida yaratilgan hujjat obyekti
-4. Ixtiyoriy konfiguratsiya parametri (batafsil [bu yerda](/docs/openapi/introduction#setup-options))
+4. Ixtiyoriy konfiguratsiya parametri (batafsil [bu yerda](/docs/openapi/introduction#setup-parametrlari))
 
 Endi HTTP serverni ishga tushirish uchun quyidagi buyruqni bajaring:
 
