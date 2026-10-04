@@ -168,24 +168,24 @@ function getLanguageLabel(language: string) {
   return language.charAt(0).toUpperCase() + language.slice(1)
 }
 
-function getLanguageIcon(language: string) {
+function LanguageIcon({ language, className }: { language: string; className?: string }) {
   if (language === 'typescript' || language === 'javascript') {
-    return FileCode2
+    return <FileCode2 className={className} />
   }
 
   if (language === 'bash') {
-    return TerminalSquare
+    return <TerminalSquare className={className} />
   }
 
   if (language === 'json') {
-    return FileJson2
+    return <FileJson2 className={className} />
   }
 
   if (language === 'sql') {
-    return Database
+    return <Database className={className} />
   }
 
-  return Braces
+  return <Braces className={className} />
 }
 
 function getAlternateLanguage(language: string) {
@@ -249,7 +249,6 @@ export function CodeBlock({ code, language }: CodeBlockProps) {
   const [activeIndex, setActiveIndex] = React.useState(0)
   const activeVariant = variants[Math.min(activeIndex, variants.length - 1)] ?? variants[0]
   const languageLabel = activeVariant.label
-  const LanguageIcon = getLanguageIcon(activeVariant.language)
 
   React.useEffect(() => {
     setActiveIndex(0)
@@ -267,7 +266,10 @@ export function CodeBlock({ code, language }: CodeBlockProps) {
         <div className="flex items-center justify-between gap-3 px-4 py-2.5 md:px-5">
           <div className="min-w-0">
             <div className="flex min-w-0 items-center text-sm font-medium text-slate-100">
-              <LanguageIcon className="mr-2.5 size-4 shrink-0 text-slate-500" />
+              <LanguageIcon
+                language={activeVariant.language}
+                className="mr-2.5 size-4 shrink-0 text-slate-500"
+              />
               <span className="truncate text-sm text-slate-300">{languageLabel}</span>
             </div>
             {activeVariant.filename ? (
