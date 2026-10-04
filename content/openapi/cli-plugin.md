@@ -47,7 +47,7 @@ export class CreateUserDto {
 
 O'rta hajmdagi loyihalarda bu katta muammo bo'lmaydi, ammo ko'p sonli klasslar bilan ishlaganda kod ortiqcha va qo'llab-quvvatlash qiyin bo'lib qoladi.
 
-[Swagger plaginini yoqish](/docs/openapi/cli-plugin#using-the-cli-plugin) orqali yuqoridagi klass ta'rifini soddaroq ko'rinishda yozish mumkin:
+[Swagger plaginini yoqish](/docs/openapi/cli-plugin#cli-plagindan-foydalanish) orqali yuqoridagi klass ta'rifini soddaroq ko'rinishda yozish mumkin:
 
 ```typescript
 export class CreateUserDto {
@@ -247,7 +247,7 @@ Standart (monorepo bo'lmagan) sozlamalarda SWC builder bilan CLI plaginlarini is
 $ nest start -b swc --type-check
 ```
 
-Monorepo sozlamalari uchun [bu yerdagi](/docs/recipes/swc#monorepo-and-cli-plugins) ko'rsatmalarga amal qiling.
+Monorepo sozlamalari uchun [bu yerdagi](/docs/recipes/swc#monorepo-va-cli-pluginlar) ko'rsatmalarga amal qiling.
 
 ```bash
 $ npx ts-node src/generate-metadata.ts

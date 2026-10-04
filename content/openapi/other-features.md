@@ -119,7 +119,7 @@ Xuddi shunday, `http://localhost:3000/api/dogs` itlar uchun Swagger UI ni ko'rsa
 
 Explorer paneli dropdown menyusida bir nechta spetsifikatsiyalarni qo'llab-quvvatlash uchun `explorer: true` ni o'rnating va `SwaggerCustomOptions` ichida `swaggerOptions.urls` ni sozlang.
 
-> info **Hint** `swaggerOptions.urls` Swagger hujjatlaringizning JSON formatiga ishora qilayotganiga ishonch hosil qiling! JSON hujjatini ko'rsatish uchun `SwaggerCustomOptions` ichida `jsonDocumentUrl` dan foydalaning. Qo'shimcha sozlash variantlari uchun [bu yerga](/docs/openapi/introduction#setup-options) qarang.
+> info **Hint** `swaggerOptions.urls` Swagger hujjatlaringizning JSON formatiga ishora qilayotganiga ishonch hosil qiling! JSON hujjatini ko'rsatish uchun `SwaggerCustomOptions` ichida `jsonDocumentUrl` dan foydalaning. Qo'shimcha sozlash variantlari uchun [bu yerga](/docs/openapi/introduction#setup-parametrlari) qarang.
 
 Explorer paneli dropdownidan bir nechta spetsifikatsiyalarni quyidagicha sozlash mumkin:
 
