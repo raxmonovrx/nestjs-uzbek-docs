@@ -469,7 +469,7 @@ Biz endi JWT autentifikatsiya implementatsiyasini yakunladik. JavaScript klientl
 
 #### Autentifikatsiyani global yoqish
 
-Agar endpointlaringizning aksariyati default bo'yicha himoyalangan bo'lishi kerak bo'lsa, autentifikatsiya guardini [global guard](/docs/core/guards#binding-guards) sifatida ro'yxatdan o'tkazishingiz mumkin va har bir controller ustida `@UseGuards()` dekoratorini qo'yish o'rniga, qaysi routelar public ekanini belgilashingiz mumkin.
+Agar endpointlaringizning aksariyati default bo'yicha himoyalangan bo'lishi kerak bo'lsa, autentifikatsiya guardini [global guard](/docs/core/guards#guardlarni-ulash) sifatida ro'yxatdan o'tkazishingiz mumkin va har bir controller ustida `@UseGuards()` dekoratorini qo'yish o'rniga, qaysi routelar public ekanini belgilashingiz mumkin.
 
 Avval `AuthGuard` ni global guard sifatida quyidagi konstruktsiya bilan ro'yxatdan o'tkazing (istalgan modulda, masalan, `AuthModule` da):
 
@@ -505,7 +505,7 @@ findAll() {
 }
 ```
 
-Nihoyat, `AuthGuard` "isPublic" metadata topilganda `true` qaytarishi kerak. Buning uchun `Reflector` klassidan foydalanamiz (batafsil [bu yerda](/docs/core/guards#putting-it-all-together)).
+Nihoyat, `AuthGuard` "isPublic" metadata topilganda `true` qaytarishi kerak. Buning uchun `Reflector` klassidan foydalanamiz (batafsil [bu yerda](/docs/core/guards#hammasini-birlashtiramiz)).
 
 ```typescript
 @Injectable()
