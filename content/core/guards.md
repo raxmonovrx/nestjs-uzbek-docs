@@ -145,7 +145,7 @@ export class AppModule {}
 
 Bizning `RolesGuard` ishlayapti, ammo u hali unchalik aqlli emas. Biz guardning eng muhim xususiyatidan - [execution context](/docs/fundamentals/execution-context) dan hali foydalanmayapmiz. U hali rollar yoki har bir handler uchun qaysi rollar ruxsat etilganini bilmaydi. Masalan, `CatsController` turli route'lar uchun turli ruxsat sxemalariga ega bo'lishi mumkin. Ba'zilari faqat admin foydalanuvchi uchun mavjud bo'lishi mumkin, boshqalari esa hamma uchun ochiq. Rollarni marshrutlarga qanday qilib moslashuvchan va qayta foydalaniladigan tarzda bog'laymiz?
 
-Bu yerda **custom metadata** yordamga keladi (batafsil [bu yerda](/docs/fundamentals/execution-context#reflection-and-metadata)). Nest custom **metadata** ni route handlerlarga `Reflector.createDecorator` statik metodi orqali yaratilgan dekoratorlar yoki o'rnatilgan `@SetMetadata()` dekoratori orqali biriktirish imkonini beradi.
+Bu yerda **custom metadata** yordamga keladi (batafsil [bu yerda](/docs/fundamentals/execution-context#reflection-va-metadata)). Nest custom **metadata** ni route handlerlarga `Reflector.createDecorator` statik metodi orqali yaratilgan dekoratorlar yoki o'rnatilgan `@SetMetadata()` dekoratori orqali biriktirish imkonini beradi.
 
 Masalan, handlerga metadata biriktiradigan `@Roles()` dekoratorini `Reflector.createDecorator` metodi yordamida yaratamiz. `Reflector` freymvork tomonidan tayyor holatda taqdim etiladi va `@nestjs/core` paketidan eksport qilinadi.
 
@@ -178,7 +178,7 @@ async create(createCatDto) {
 
 Bu yerda `Roles` dekoratori metadata'sini `create()` metodiga biriktirdik, ya'ni faqat `admin` roliga ega foydalanuvchilar ushbu route'ga kirishi kerakligini ko'rsatdik.
 
-Muqobil ravishda, `Reflector.createDecorator` metodidan foydalanish o'rniga o'rnatilgan `@SetMetadata()` dekoratoridan foydalanishimiz mumkin. Batafsil [bu yerda](/docs/fundamentals/execution-context#low-level-approach).
+Muqobil ravishda, `Reflector.createDecorator` metodidan foydalanish o'rniga o'rnatilgan `@SetMetadata()` dekoratoridan foydalanishimiz mumkin. Batafsil [bu yerda](/docs/fundamentals/execution-context#past-darajadagi-yondashuv).
 
 #### Hammasini birlashtiramiz
 
