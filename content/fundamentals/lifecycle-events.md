@@ -14,7 +14,7 @@ Quyidagi diagrammada ilovaning bootstrappingidan boshlab node jarayoni yakunlang
 
 #### Lifecycle hodisalari
 
-Lifecycle hodisalari ilovani bootstrap qilish va shutdown paytida sodir bo'ladi. Nest quyidagi lifecycle hodisalarining har birida modullar, provayderlar va controllerlardagi ro'yxatdan o'tgan lifecycle hook metodlarini chaqiradi (**shutdown hooks** avval yoqilishi kerak, quyida [shunday ta'riflangan](/docs/fundamentals/lifecycle-events#application-shutdown)idek). Yuqoridagi diagrammada ko'rsatilganidek, Nest ulanishlarni tinglashni boshlash va ulanishlarni to'xtatish uchun mos underlying metodlarni ham chaqiradi.
+Lifecycle hodisalari ilovani bootstrap qilish va shutdown paytida sodir bo'ladi. Nest quyidagi lifecycle hodisalarining har birida modullar, provayderlar va controllerlardagi ro'yxatdan o'tgan lifecycle hook metodlarini chaqiradi (**shutdown hooks** avval yoqilishi kerak, quyida [shunday ta'riflangan](/docs/fundamentals/lifecycle-events#ilovani-ochirish)idek). Yuqoridagi diagrammada ko'rsatilganidek, Nest ulanishlarni tinglashni boshlash va ulanishlarni to'xtatish uchun mos underlying metodlarni ham chaqiradi.
 
 Quyidagi jadvalda `onModuleInit` va `onApplicationBootstrap` faqat `app.init()` yoki `app.listen()` ni aniq chaqirganingizda ishga tushadi.
 
@@ -28,7 +28,7 @@ Quyidagi jadvalda `onModuleDestroy`, `beforeApplicationShutdown` va `onApplicati
 | `beforeApplicationShutdown()`\* | Barcha `onModuleDestroy()` handlerlari tugagach (Promise'lar resolve yoki reject bo'lgach) chaqiriladi;<br />tugatish yakunlangach (Promise'lar resolve yoki reject bo'lgach), mavjud ulanishlarning barchasi yopiladi (`app.close()` chaqiriladi). |
 | `onApplicationShutdown()`\*     | Ulanishlar yopilgach chaqiriladi (`app.close()` resolve bo'lgach).                                                                                                                                             |
 
-\* Bu hodisalar uchun, agar `app.close()` ni aniq chaqirmayotgan bo'lsangiz, SIGTERM kabi tizim signallari bilan ishlashi uchun ularni yoqish kerak. Quyidagi [Application shutdown](/docs/fundamentals/lifecycle-events#application-shutdown) bo'limiga qarang.
+\* Bu hodisalar uchun, agar `app.close()` ni aniq chaqirmayotgan bo'lsangiz, SIGTERM kabi tizim signallari bilan ishlashi uchun ularni yoqish kerak. Quyidagi [Application shutdown](/docs/fundamentals/lifecycle-events#ilovani-ochirish) bo'limiga qarang.
 
 > warning **Warning** Yuqorida keltirilgan lifecycle hook'lar **request-scoped** sinflar uchun ishga tushirilmaydi. Request-scoped sinflar ilova lifecycle'iga bog'liq emas va ularning yashash muddati oldindan aytib bo'lmaydi. Ular har bir so'rov uchun alohida yaratiladi va javob yuborilgach avtomatik garbage-collected bo'ladi.
 

@@ -6,7 +6,7 @@ order: 5
 group: fundamentals
 groupTitle: "Fundamentals"
 ---
-[Modullar bobi](/docs/core/modules) Nest modullarining asoslarini qamrab oladi va [dinamik modullar](/docs/core/modules#dynamic-modules) haqida qisqacha kirish beradi. Ushbu bob dinamik modullar mavzusini kengaytiradi. Yakunda siz ularning nimaligini va qachon hamda qanday ishlatishni yaxshi tushunib olasiz.
+[Modullar bobi](/docs/core/modules) Nest modullarining asoslarini qamrab oladi va [dinamik modullar](/docs/core/modules#dinamik-modullar) haqida qisqacha kirish beradi. Ushbu bob dinamik modullar mavzusini kengaytiradi. Yakunda siz ularning nimaligini va qachon hamda qanday ishlatishni yaxshi tushunib olasiz.
 
 #### Kirish
 
@@ -75,7 +75,7 @@ Boshqacha qilib aytganda, dinamik modullar bir modulni boshqasiga import qilish 
 
 #### Config modul misoli
 
-Bu bo'lim uchun [configuration chapter](/docs/techniques/configuration#service) dagi kod misolining bazaviy versiyasidan foydalanamiz. Ushbu bob oxiridagi yakuniy versiya ishlaydigan misol sifatida bu yerda mavjud.
+Bu bo'lim uchun [configuration chapter](/docs/techniques/configuration#configservicedan-foydalanish) dagi kod misolining bazaviy versiyasidan foydalanamiz. Ushbu bob oxiridagi yakuniy versiya ishlaydigan misol sifatida bu yerda mavjud.
 
 Talabimiz - `ConfigModule` `options` obyektini qabul qilib, o'zini moslashtira olsin. Biz qo'llab-quvvatlamoqchi bo'lgan imkoniyat mana shunday. Bazaviy namunada `.env` fayli joylashuvi project root katalogiga qattiq kodlangan. Faraz qilaylik, buni sozlanadigan qilishni xohlaymiz, ya'ni `.env` fayllarini xohlagan katalogingizda boshqara olasiz. Masalan, project root ostida `config` nomli katalogda (ya'ni `src` bilan yonma-yon) turli `.env` fayllarini saqlamoqchisiz. `ConfigModule` ni turli loyihalarda ishlatganda turli kataloglarni tanlash imkonini xohlaysiz.
 
@@ -381,8 +381,8 @@ Endi yuqoridagi xossalarni birma-bir ko'rib chiqamiz:
 
 - `useFactory` - konfiguratsiya obyektini qaytaradigan funksiya. U sinxron yoki asinxron bo'lishi mumkin. Factory funksiyasiga bog'liqliklarni in'eksiya qilish uchun `inject` xossasidan foydalaning. Yuqoridagi misolda biz shu variantni ishlatdik.
 - `inject` - factory funksiyasiga in'eksiya qilinadigan bog'liqliklar massivi. Bog'liqliklar tartibi factory funksiyasidagi parametrlar tartibiga mos bo'lishi kerak.
-- `useClass` - provayder sifatida instansiyalanadigan sinf. Sinf mos interfeysni amalga oshirishi kerak. Odatda bu konfiguratsiya obyektini qaytaradigan `create()` metodini taqdim etadigan sinf. Buning haqida quyidagi [Custom method key](/docs/fundamentals/dynamic-modules#custom-method-key) bo'limida batafsil o'qing.
-- `useExisting` - `useClass` ning varianti bo'lib, Nestga yangi instansiya yaratishni buyurish o'rniga, mavjud provayderdan foydalanishga imkon beradi. Modulda allaqachon ro'yxatdan o'tgan provayderdan foydalanishni xohlaganingizda foydali. E'tiborda tuting, sinf `useClass` da ishlatilgan interfeys bilan bir xil interfeysni amalga oshirishi kerak (shuning uchun u `create()` metodini taqdim etishi shart, agar siz default metod nomini o'zgartirmagan bo'lsangiz; qarang [Custom method key](/docs/fundamentals/dynamic-modules#custom-method-key) bo'limi).
+- `useClass` - provayder sifatida instansiyalanadigan sinf. Sinf mos interfeysni amalga oshirishi kerak. Odatda bu konfiguratsiya obyektini qaytaradigan `create()` metodini taqdim etadigan sinf. Buning haqida quyidagi [Custom method key](/docs/fundamentals/dynamic-modules#maxsus-metod-kaliti) bo'limida batafsil o'qing.
+- `useExisting` - `useClass` ning varianti bo'lib, Nestga yangi instansiya yaratishni buyurish o'rniga, mavjud provayderdan foydalanishga imkon beradi. Modulda allaqachon ro'yxatdan o'tgan provayderdan foydalanishni xohlaganingizda foydali. E'tiborda tuting, sinf `useClass` da ishlatilgan interfeys bilan bir xil interfeysni amalga oshirishi kerak (shuning uchun u `create()` metodini taqdim etishi shart, agar siz default metod nomini o'zgartirmagan bo'lsangiz; qarang [Custom method key](/docs/fundamentals/dynamic-modules#maxsus-metod-kaliti) bo'limi).
 
 Yuqoridagi variantlardan birini (`useFactory`, `useClass` yoki `useExisting`) har doim tanlang, chunki ular o'zaro mos kelmaydi.
 
@@ -488,7 +488,7 @@ export const { ConfigurableModuleClass, MODULE_OPTIONS_TOKEN } =
     .build();
 ```
 
-Yuqoridagi misolda `setExtras` metodiga uzatilgan birinchi argument "extra" xossalar uchun default qiymatlarni o'z ichiga olgan obyekt. Ikkinchi argument - auto-generated modul definitsiyasini (`provider`, `exports` va boshqalar bilan) va `extras` obyektini qabul qiladigan funksiya; `extras` qo'shimcha xossalarni (consumer tomonidan berilgan yoki default) ifodalaydi. Funksiyaning qaytgan qiymati - o'zgartirilgan modul definitsiyasi. Bu aniq misolda biz `extras.isGlobal` xossasini modul definitsiyasining `global` xossasiga biriktiryapmiz (bu esa modul global yoki yo'qligini belgilaydi, batafsil [bu yerda](/docs/core/modules#dynamic-modules)).
+Yuqoridagi misolda `setExtras` metodiga uzatilgan birinchi argument "extra" xossalar uchun default qiymatlarni o'z ichiga olgan obyekt. Ikkinchi argument - auto-generated modul definitsiyasini (`provider`, `exports` va boshqalar bilan) va `extras` obyektini qabul qiladigan funksiya; `extras` qo'shimcha xossalarni (consumer tomonidan berilgan yoki default) ifodalaydi. Funksiyaning qaytgan qiymati - o'zgartirilgan modul definitsiyasi. Bu aniq misolda biz `extras.isGlobal` xossasini modul definitsiyasining `global` xossasiga biriktiryapmiz (bu esa modul global yoki yo'qligini belgilaydi, batafsil [bu yerda](/docs/core/modules#dinamik-modullar)).
 
 Endi bu modulni iste'mol qilganda qo'shimcha `isGlobal` bayrog'ini quyidagicha uzatish mumkin:
 
