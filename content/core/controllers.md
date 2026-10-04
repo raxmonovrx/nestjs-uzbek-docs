@@ -12,7 +12,7 @@ Controllerning vazifasi — ilova uchun aniq (specific) so‘rovlarni boshqarish
 
 Oddiy controller yaratish uchun biz class’lar va **decorator**lardan foydalanamiz. Decoratorlar class’larni kerakli metadata bilan bog‘laydi va Nest’ga request’larni tegishli controllerlarga ulaydigan routing map yaratish imkonini beradi.
 
-> info **Hint** Ichki [validation](/docs/techniques/validation) bilan CRUD controller’ni tez yaratish uchun CLI’dagi [CRUD generator](/docs/recipes/crud-generator#crud-generator)dan foydalanishingiz mumkin: `nest g resource [name]`.
+> info **Hint** Ichki [validation](/docs/techniques/validation) bilan CRUD controller’ni tez yaratish uchun CLI’dagi [CRUD generator](/docs/recipes/crud-generator)dan foydalanishingiz mumkin: `nest g resource [name]`.
 
 #### Routing
 
@@ -407,7 +407,7 @@ async create(createCatDto) {
 }
 ```
 
-> info **Hint** Bizning `ValidationPipe` metod handler’iga kelishi kerak bo‘lmagan property’larni filtrlab tashlashi mumkin. Bu holatda biz acceptable property’larni whitelist qilib qo‘yamiz, whitelist’ga kirmagan property esa natijaviy object’dan avtomatik olib tashlanadi. `CreateCatDto` misolida whitelist — `name`, `age`, va `breed` property’lari. Batafsil [bu yerda](/docs/techniques/validation#stripping-properties).
+> info **Hint** Bizning `ValidationPipe` metod handler’iga kelishi kerak bo‘lmagan property’larni filtrlab tashlashi mumkin. Bu holatda biz acceptable property’larni whitelist qilib qo‘yamiz, whitelist’ga kirmagan property esa natijaviy object’dan avtomatik olib tashlanadi. `CreateCatDto` misolida whitelist — `name`, `age`, va `breed` property’lari. Batafsil [bu yerda](/docs/techniques/validation#xossalarni-tozalash).
 
 #### Query parameter’lar
 

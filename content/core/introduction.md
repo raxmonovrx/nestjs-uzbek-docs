@@ -20,7 +20,7 @@ Nest “out-of-the-box” (tayyor) ilova arxitekturasini beradi — bu arxitektu
 
 #### O‘rnatish
 
-Boshlash uchun siz loyihani [Nest CLI](/docs/cli/overview) orqali scaffold qilishingiz yoki [starter project’ni clone](#alternatives) qilishingiz mumkin (ikkalasi ham bir xil natija beradi).
+Boshlash uchun siz loyihani [Nest CLI](/docs/cli/overview) orqali scaffold qilishingiz yoki [starter project’ni clone](#muqobil-variantlar) qilishingiz mumkin (ikkalasi ham bir xil natija beradi).
 
 Nest CLI orqali scaffold qilish uchun quyidagi buyruqlarni ishga tushiring. Bu yangi loyiha papkasini yaratadi va uni Nest’ning boshlang‘ich asosiy fayllari hamda qo‘llab-quvvatlovchi modullar bilan to‘ldiradi — loyiha uchun odatiy (conventional) bazaviy struktura hosil bo‘ladi. Birinchi marta foydalanayotganlar uchun **Nest CLI** orqali yangi loyiha yaratish tavsiya etiladi. Biz ham shu yondashuvni [First Steps](/docs/core/first-steps) bo‘limida davom ettiramiz.
 
