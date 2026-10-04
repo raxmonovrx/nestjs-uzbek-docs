@@ -47,7 +47,7 @@ export class Recipe {
 
 Endi `Recipe` object type ning `title` fieldi so'ralganda, original field qiymati konsolga loglanadi.
 
-> info **Hint** [extensions](/docs/graphql/extensions) funksiyasi yordamida field darajasidagi ruxsat tizimini qanday implementatsiya qilish mumkinligini bilish uchun ushbu [bo'lim](/docs/graphql/extensions#using-custom-metadata)ga qarang.
+> info **Hint** [extensions](/docs/graphql/extensions) funksiyasi yordamida field darajasidagi ruxsat tizimini qanday implementatsiya qilish mumkinligini bilish uchun ushbu [bo'lim](/docs/graphql/extensions#custom-metadatadan-foydalanish)ga qarang.
 
 > warning **Warning** Field middleware faqat `ObjectType` klasslariga qo'llanadi. Batafsil ma'lumot uchun ushbu issuega qarang.
 

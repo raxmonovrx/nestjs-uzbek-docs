@@ -241,7 +241,7 @@ type Query {
 
 #### Args dekoratori opsiyalari
 
-`@Args()` dekoratoridan so'rovdagi argumentlarni olish uchun foydalaning. Bu [REST route parameter argument extraction](/docs/core/controllers#route-parameters) bilan juda o'xshash ishlaydi.
+`@Args()` dekoratoridan so'rovdagi argumentlarni olish uchun foydalaning. Bu [REST route parameter argument extraction](/docs/core/controllers#route-parameter’lari) bilan juda o'xshash ishlaydi.
 
 Odatda `@Args()` dekoratori sodda bo'ladi va yuqoridagi `getAuthor()` misolidagi kabi obyekt argumentini talab qilmaydi. Masalan, identifikator turi string bo'lsa, quyidagi konstruktsiya yetarli va GraphQL so'rovdan nomlangan fieldni olib metod argumenti sifatida beradi.
 

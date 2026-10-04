@@ -166,7 +166,7 @@ Standart setup (monorepo emas) uchun, SWC builder bilan CLI plaginlaridan foydal
 $ nest start -b swc --type-check
 ```
 
-Monorepo setup uchun, [bu yerdagi](/docs/recipes/swc#monorepo-and-cli-plugins) ko'rsatmalarga amal qiling.
+Monorepo setup uchun, [bu yerdagi](/docs/recipes/swc#monorepo-va-cli-pluginlar) ko'rsatmalarga amal qiling.
 
 ```bash
 $ npx ts-node src/generate-metadata.ts

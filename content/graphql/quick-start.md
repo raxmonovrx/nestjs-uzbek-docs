@@ -8,7 +8,7 @@ groupTitle: "GraphQL"
 ---
 GraphQL - bu APIlar uchun kuchli query tili va mavjud ma'lumotlaringiz bilan ushbu so'rovlarni bajarish uchun runtime. Bu REST APIlarda ko'p uchraydigan muammolarni hal qiladigan nafis yondashuv. Asosiy ma'lumot uchun GraphQL va REST taqqoslanadigan ushbu taqqoslashni o'qishni tavsiya qilamiz. GraphQL bilan birga TypeScriptdan foydalanish GraphQL so'rovlari uchun yaxshiroq type safety beradi va end-to-end typingni ta'minlaydi.
 
-Bu bobda GraphQL haqida asosiy tushunchalar bor deb faraz qilamiz va ichki `@nestjs/graphql` moduli bilan qanday ishlashga e'tibor qaratamiz. `GraphQLModule`ni Apollo server ( `@nestjs/apollo` driveri bilan) va Mercurius (`@nestjs/mercurius` bilan) uchun sozlash mumkin. Biz ushbu ishonchli GraphQL paketlari uchun rasmiy integratsiyalarni taqdim etamiz, shunda Nest bilan GraphQLdan foydalanish oson bo'ladi (batafsil integratsiyalar [bu yerda](/docs/graphql/quick-start#third-party-integrations)).
+Bu bobda GraphQL haqida asosiy tushunchalar bor deb faraz qilamiz va ichki `@nestjs/graphql` moduli bilan qanday ishlashga e'tibor qaratamiz. `GraphQLModule`ni Apollo server ( `@nestjs/apollo` driveri bilan) va Mercurius (`@nestjs/mercurius` bilan) uchun sozlash mumkin. Biz ushbu ishonchli GraphQL paketlari uchun rasmiy integratsiyalarni taqdim etamiz, shunda Nest bilan GraphQLdan foydalanish oson bo'ladi (batafsil integratsiyalar [bu yerda](/docs/graphql/quick-start#uchinchi-tomon-integratsiyalari)).
 
 Shuningdek, o'zingizning maxsus driveringizni yaratishingiz ham mumkin (batafsil bu yerda).
 
@@ -39,7 +39,7 @@ Nest GraphQL ilovalarini yaratishning ikki usulini taklif qiladi: **code first**
 
 #### GraphQL va TypeScript bilan boshlash
 
-> info **Hint** Keyingi bo'limlarda `@nestjs/apollo` paketini integratsiya qilamiz. Agar `mercurius`dan foydalanmoqchi bo'lsangiz, [bu bo'lim](/docs/graphql/quick-start#mercurius-integration)ga o'ting.
+> info **Hint** Keyingi bo'limlarda `@nestjs/apollo` paketini integratsiya qilamiz. Agar `mercurius`dan foydalanmoqchi bo'lsangiz, [bu bo'lim](/docs/graphql/quick-start#mercurius-integratsiyasi)ga o'ting.
 
 Paketlar o'rnatilgach, `GraphQLModule`ni import qilib, uni `forRoot()` statik metodi bilan sozlashimiz mumkin.
 
