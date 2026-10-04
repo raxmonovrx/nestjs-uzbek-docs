@@ -267,7 +267,7 @@ Bundan tashqari, `.swcrc` fayliga quyidagi `transform` xossalarini qo'shishingiz
 }
 ```
 
-Agar loyihada NestJS CLI plugin'lari ishlatilsa, `PluginMetadataGenerator` ni qo'lda ishga tushirishingiz kerak bo'ladi. Batafsil ma'lumot uchun [ushbu bo'lim](/docs/recipes/swc#monorepo-and-cli-plugins) ga qarang.
+Agar loyihada NestJS CLI plugin'lari ishlatilsa, `PluginMetadataGenerator` ni qo'lda ishga tushirishingiz kerak bo'ladi. Batafsil ma'lumot uchun [ushbu bo'lim](/docs/recipes/swc#monorepo-va-cli-pluginlar) ga qarang.
 
 ### Vitest
 

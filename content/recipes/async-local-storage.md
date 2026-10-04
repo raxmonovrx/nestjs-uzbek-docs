@@ -159,7 +159,7 @@ npm i nestjs-cls
 
 #### Foydalanish
 
-Yuqorida tasvirlangan [o'xshash funksionallik](/docs/recipes/async-local-storage#custom-implementation) ni `nestjs-cls` yordamida quyidagicha amalga oshirish mumkin:
+Yuqorida tasvirlangan [o'xshash funksionallik](/docs/recipes/async-local-storage#maxsus-implementatsiya) ni `nestjs-cls` yordamida quyidagicha amalga oshirish mumkin:
 
 1. `ClsModule` ni ildiz modulga import qiling.
 

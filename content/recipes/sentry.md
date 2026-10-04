@@ -101,7 +101,7 @@ export class YourCatchAllExceptionFilter implements ExceptionFilter {
 }
 ```
 
-Standart holatda faqat error filter tomonidan ushlanmagan unhandled exception'lar Sentry'ga yuboriladi. `HttpExceptions` (jumladan [undan meros oluvchilar](/docs/core/exception-filters#built-in-http-exceptions)) ham standart bo'yicha yuborilmaydi, chunki ular ko'pincha control flow mexanizmi sifatida ishlaydi.
+Standart holatda faqat error filter tomonidan ushlanmagan unhandled exception'lar Sentry'ga yuboriladi. `HttpExceptions` (jumladan [undan meros oluvchilar](/docs/core/exception-filters#ornatilgan-http-istisnolari)) ham standart bo'yicha yuborilmaydi, chunki ular ko'pincha control flow mexanizmi sifatida ishlaydi.
 
 Agar sizda global catch-all exception filter bo'lmasa, `SentryGlobalFilter` ni asosiy modulingizning providers qismiga qo'shing. Bu filter boshqa error filter'lar ushlamagan barcha unhandled xatolarni Sentry'ga yuboradi.
 

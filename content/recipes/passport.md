@@ -830,7 +830,7 @@ export class JwtAuthGuard extends AuthGuard(['strategy_jwt_1', 'strategy_jwt_2',
 
 #### Authentication'ni global yoqish
 
-Agar endpoint'laringizning katta qismi standart holatda protected bo'lishi kerak bo'lsa, authentication guard'ni [global guard](/docs/core/guards#binding-guards) sifatida ro'yxatdan o'tkazishingiz mumkin. Shunda har bir controller ustiga `@UseGuards()` dekoratori yozish o'rniga, qaysi route'lar public ekanini belgilab qo'yishning o'zi kifoya qiladi.
+Agar endpoint'laringizning katta qismi standart holatda protected bo'lishi kerak bo'lsa, authentication guard'ni [global guard](/docs/core/guards#guardlarni-ulash) sifatida ro'yxatdan o'tkazishingiz mumkin. Shunda har bir controller ustiga `@UseGuards()` dekoratori yozish o'rniga, qaysi route'lar public ekanini belgilab qo'yishning o'zi kifoya qiladi.
 
 Avval `JwtAuthGuard` ni quyidagi ko'rinishda global guard sifatida ro'yxatdan o'tkazing (istalgan modul ichida):
 
@@ -866,7 +866,7 @@ findAll() {
 }
 ```
 
-Oxirida `JwtAuthGuard` `"isPublic"` metadata'sini topsa `true` qaytarishi kerak. Buning uchun `Reflector` class'idan foydalanamiz ([bu yerda](/docs/core/guards#putting-it-all-together) batafsilroq o'qishingiz mumkin).
+Oxirida `JwtAuthGuard` `"isPublic"` metadata'sini topsa `true` qaytarishi kerak. Buning uchun `Reflector` class'idan foydalanamiz ([bu yerda](/docs/core/guards#hammasini-birlashtiramiz) batafsilroq o'qishingiz mumkin).
 
 ```typescript
 @Injectable()
