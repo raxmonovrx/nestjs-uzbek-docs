@@ -86,11 +86,11 @@ Client yaratishning boshqa usullari (`ClientProxyFactory` yoki `@Client()`) ham 
 
 #### So'rov-javob
 
-**So'rov-javob** message uslubi uchun ([read more](/docs/microservices/basics#request-response)), NATS transportyori NATSning built-in Request-Reply mexanizmidan foydalanmaydi. Buning o'rniga, "request" `publish()` metodi orqali berilgan subjectda, noyob reply subject nomi bilan publish qilinadi, va responderlar o'sha subjectni tinglab reply subjectga javob yuboradi. Reply subjectlar joylashuvdan qat'i nazar, so'rov yuboruvchiga dinamik ravishda yo'naltiriladi.
+**So'rov-javob** message uslubi uchun ([read more](/docs/microservices/basics#sorov-javob)), NATS transportyori NATSning built-in Request-Reply mexanizmidan foydalanmaydi. Buning o'rniga, "request" `publish()` metodi orqali berilgan subjectda, noyob reply subject nomi bilan publish qilinadi, va responderlar o'sha subjectni tinglab reply subjectga javob yuboradi. Reply subjectlar joylashuvdan qat'i nazar, so'rov yuboruvchiga dinamik ravishda yo'naltiriladi.
 
 #### Eventga asoslangan
 
-**Eventga asoslangan** message uslubi uchun ([read more](/docs/microservices/basics#event-based)), NATS transportyori NATSning built-in Publish-Subscribe mexanizmidan foydalanadi. Publisher subjectda xabar yuboradi va o'sha subjectni tinglayotgan har qanday faol subscriber xabarni oladi. Subscriberlar wildcard subjectlarga ham qiziqishini ro'yxatdan o'tkazishi mumkin, ular oddiy regexga biroz o'xshaydi. Bu bir-to-ko'p pattern ba'zan fan-out deb ataladi.
+**Eventga asoslangan** message uslubi uchun ([read more](/docs/microservices/basics#eventga-asoslangan)), NATS transportyori NATSning built-in Publish-Subscribe mexanizmidan foydalanadi. Publisher subjectda xabar yuboradi va o'sha subjectni tinglayotgan har qanday faol subscriber xabarni oladi. Subscriberlar wildcard subjectlarga ham qiziqishini ro'yxatdan o'tkazishi mumkin, ular oddiy regexga biroz o'xshaydi. Bu bir-to-ko'p pattern ba'zan fan-out deb ataladi.
 
 #### Queue grouplari
 

@@ -589,11 +589,11 @@ export class HeroesService {
 }
 ```
 
-Xuddi shuningdek, `@GrpcStreamMethod()` handlerlarida ([subject strategy](/docs/microservices/grpc#subject-strategy)) metadatani o'qish uchun ikkinchi argumentdan (metadata) foydalaning; u `Metadata` tipida (`grpc` paketidan import qilinadi).
+Xuddi shuningdek, `@GrpcStreamMethod()` handlerlarida ([subject strategy](/docs/microservices/grpc#subject-strategiyasi)) metadatani o'qish uchun ikkinchi argumentdan (metadata) foydalaning; u `Metadata` tipida (`grpc` paketidan import qilinadi).
 
 Handlerdan metadatani qaytarish uchun `ServerDuplexStream#sendMetadata()` metodidan foydalaning (uchinchi handler argumenti).
 
-[call stream handlers](/docs/microservices/grpc#call-stream-handler) ichidan (`@GrpcStreamCall()` dekoratori bilan belgilangan handlerlar) metadatani o'qish uchun `requestStream` referensidagi `metadata` eventini tinglang, quyidagicha:
+[call stream handlers](/docs/microservices/grpc#call-stream-handleri) ichidan (`@GrpcStreamCall()` dekoratori bilan belgilangan handlerlar) metadatani o'qish uchun `requestStream` referensidagi `metadata` eventini tinglang, quyidagicha:
 
 ```typescript
 requestStream.on('metadata', (metadata: Metadata) => {

@@ -189,7 +189,7 @@ Odatda topic partitionlari round robin partitioner yordamida biriktiriladi, u to
 
 #### Javobga obuna bo'lish
 
-> warning **Note** Bu bo'lim faqat [request-response](/docs/microservices/basics#request-response) message uslubidan foydalansangiz ( `@MessagePattern` dekoratori va `ClientKafkaProxy.send` metodi bilan) tegishli. [event-based](/docs/microservices/basics#event-based) muloqot (`@EventPattern` dekoratori va `ClientKafkaProxy.emit` metodi) uchun response topicga subscribe bo'lish shart emas.
+> warning **Note** Bu bo'lim faqat [request-response](/docs/microservices/basics#sorov-javob) message uslubidan foydalansangiz ( `@MessagePattern` dekoratori va `ClientKafkaProxy.send` metodi bilan) tegishli. [event-based](/docs/microservices/basics#eventga-asoslangan) muloqot (`@EventPattern` dekoratori va `ClientKafkaProxy.emit` metodi) uchun response topicga subscribe bo'lish shart emas.
 
 `ClientKafkaProxy` klassi `subscribeToResponseOf()` metodini taqdim etadi. `subscribeToResponseOf()` metodi so'rov topic nomini argument sifatida oladi va hosil qilingan reply topic nomini reply topiclar kolleksiyasiga qo'shadi. Bu metod message patternni implement qilishda talab etiladi.
 
@@ -296,7 +296,7 @@ export class HeroesController {
 
 Request-response usuli servislar o'rtasida xabar almashish uchun ideal bo'lsa-da, xabar uslubi event-based bo'lganda (bu Kafka uchun ideal), ya'ni **javob kutmasdan** event publish qilmoqchi bo'lsangiz, u kamroq mos. Bunday holatda request-response uchun ikki topicni ushlab turish ortiqcha bo'ladi.
 
-Batafsil ma'lumot uchun ushbu ikki bo'limga qarang: [Umumiy ko'rinish: Eventga asoslangan](/docs/microservices/basics#event-based) va [Umumiy ko'rinish: Eventlarni publish qilish](/docs/microservices/basics#publishing-events).
+Batafsil ma'lumot uchun ushbu ikki bo'limga qarang: [Umumiy ko'rinish: Eventga asoslangan](/docs/microservices/basics#eventga-asoslangan) va [Umumiy ko'rinish: Eventlarni publish qilish](/docs/microservices/basics#eventlarni-publish-qilish).
 
 #### Kontekst
 
