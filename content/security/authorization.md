@@ -110,7 +110,7 @@ export class RolesGuard {
 }
 ```
 
-> info **Hint** `Reflector`dan kontekstga bog'liq tarzda foydalanish haqida batafsil ma'lumot uchun Execution context bobidagi [Reflection and metadata](/docs/fundamentals/execution-context#reflection-and-metadata) bo'limiga qarang.
+> info **Hint** `Reflector`dan kontekstga bog'liq tarzda foydalanish haqida batafsil ma'lumot uchun Execution context bobidagi [Reflection and metadata](/docs/fundamentals/execution-context#reflection-va-metadata) bo'limiga qarang.
 
 > warning **Notice** Bu misol "**oddiy**" deb nomlangan, chunki biz faqat route handler darajasida rollar mavjudligini tekshiramiz. Haqiqiy ilovalarda bir nechta operatsiyalarni o'z ichiga oladigan endpoint/handlerlar bo'lishi mumkin va ularning har biri ma'lum ruxsatlar to'plamini talab qiladi. Bunday holatda siz biznes mantiqingiz ichida rollarni tekshirish mexanizmini taqdim etishingiz kerak bo'ladi, bu esa markaziy tarzda qaysi amallar qaysi ruxsatlar bilan bog'lanishini saqlashni biroz qiyinlashtiradi.
 
@@ -152,7 +152,7 @@ Imtiyozlari yetarli bo'lmagan foydalanuvchi endpointga murojaat qilganda, Nest a
 
 Shaxs (identity) yaratilganda, unga ishonchli tomon tomonidan bir yoki bir nechta claim berilishi mumkin. Claim - bu subyekt nima qila olishini ifodalovchi name-value juftligi, subyektning kimligi emas.
 
-Nestda claims-based avtorizatsiyani implementatsiya qilish uchun yuqorida [RBAC](/docs/security/authorization#basic-rbac-implementation) bo'limida ko'rsatgan qadamlarni bir muhim farq bilan takrorlaysiz: aniq rollarni tekshirish o'rniga **permissions** ni solishtirasiz. Har bir foydalanuvchida ruxsatlar to'plami bo'ladi. Shuningdek, har bir resurs/endpoint kirish uchun qanday ruxsatlar kerakligini belgilaydi (masalan, maxsus `@RequirePermissions()` dekoratori orqali).
+Nestda claims-based avtorizatsiyani implementatsiya qilish uchun yuqorida [RBAC](/docs/security/authorization#oddiy-rbac-implementatsiyasi) bo'limida ko'rsatgan qadamlarni bir muhim farq bilan takrorlaysiz: aniq rollarni tekshirish o'rniga **permissions** ni solishtirasiz. Har bir foydalanuvchida ruxsatlar to'plami bo'ladi. Shuningdek, har bir resurs/endpoint kirish uchun qanday ruxsatlar kerakligini belgilaydi (masalan, maxsus `@RequirePermissions()` dekoratori orqali).
 
 ```typescript
 @@filename(cats.controller)
