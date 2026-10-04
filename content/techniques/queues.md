@@ -52,7 +52,7 @@ export class AppModule {}
 - `prefix: string` - Barcha navbat kalitlari uchun prefiks. Ixtiyoriy.
 - `defaultJobOptions: JobOpts` - Yangi joblar uchun default sozlamalarni boshqarish opsiyalari. Batafsil JobOpts. Ixtiyoriy.
 - `settings: AdvancedSettings` - Navbat konfiguratsiyasining ilg'or sozlamalari. Odatda bularni o'zgartirmaslik kerak. Batafsil AdvancedSettings. Ixtiyoriy.
-- `extraOptions` - Modulni init qilish uchun qo'shimcha opsiyalar. Batafsil [Manual Registration](/docs/techniques/queues#manual-registration)
+- `extraOptions` - Modulni init qilish uchun qo'shimcha opsiyalar. Batafsil [Manual Registration](/docs/techniques/queues#qolda-royxatdan-otkazish)
 
 Barcha opsiyalar ixtiyoriy bo'lib, navbat xatti-harakatini batafsil boshqarishni ta'minlaydi. Ular to'g'ridan-to'g'ri BullMQ `Queue` konstruktoriga uzatiladi. Ushbu opsiyalar va boshqa opsiyalar haqida batafsil bu yerda o'qing.
 

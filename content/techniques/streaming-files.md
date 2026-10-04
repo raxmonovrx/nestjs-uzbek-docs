@@ -52,7 +52,7 @@ export class FileController {
 }
 ```
 
-Default content type (`Content-Type` HTTP response header qiymati) `application/octet-stream`. Agar bu qiymatni sozlash kerak bo'lsa, `StreamableFile` dagi `type` opsiyasidan foydalanishingiz yoki `res.set` metodidan yoxud [`@Header()`](/docs/core/controllers#response-headers) dekoratoridan foydalanishingiz mumkin, masalan:
+Default content type (`Content-Type` HTTP response header qiymati) `application/octet-stream`. Agar bu qiymatni sozlash kerak bo'lsa, `StreamableFile` dagi `type` opsiyasidan foydalanishingiz yoki `res.set` metodidan yoxud [`@Header()`](/docs/core/controllers#response-header’lari) dekoratoridan foydalanishingiz mumkin, masalan:
 
 ```ts
 import { Controller, Get, StreamableFile, Res } from '@nestjs/common';
